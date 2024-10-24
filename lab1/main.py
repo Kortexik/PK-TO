@@ -82,7 +82,7 @@ class CurrencyCollection(InterfaceCurrencyCollection):
 
 class Exchanger:
     def exchange(curr1:Currency, curr2:Currency, how_much: float) -> float:
-        return round((curr1.rate / curr2.rate * how_much), 2)
+        return round((curr1.get_rate() / curr2.get_rate() * how_much), 2)
         
 
 class XMLParser:
@@ -121,6 +121,9 @@ class DataProvider(metaclass=Singleton):
 
 class UI:
     def loop(codesList) -> list:
+        print('Dostepne waluty:')
+        for currencyCode in codesList:
+            print(currencyCode)
         while True:
             while True:
                 firstCode = input("Please provide the currency that you want to convert from using its three-letter code: \n").upper()
@@ -155,6 +158,7 @@ class Main:
     def main() -> None:
         parser = XMLParser('https://api.nbp.pl/api/exchangerates/tables/a/', 'UTF-8')
         currency_collection = parser.parse()
+        currency_collection.add(Currency('PLN', "Polski Złoty", 1.0))
         codesList = currency_collection.codesList()
 
         ui = UI.loop(codesList)
