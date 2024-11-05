@@ -32,9 +32,10 @@ func main() {
 	fmt.Println("v2 cross v3 =", vec23d.Cross(vec33d).GetComponents())
 
 	/* DZIEDZICZENIE
-	vec1i := mylib.NewVector2D(1, 2)
-	vec2i := mylib.NewVector2D(3, 4)
-	vec3i := mylib.NewVector2D(5, 6)
+
+	vec1i := mylib.NewVector2D(112, -2)
+	vec2i := mylib.NewVector2D(-3, -432)
+	vec3i := mylib.NewVector2D(54, 6)
 
 	vec1Pi := mylib.NewVector2DPolarI(vec1i)
 	vec2Pi := mylib.NewVector2DPolarI(vec2i)
@@ -56,6 +57,6 @@ func main() {
 	fmt.Println("\nv1 cross v2 =", vec13di.Cross(vec23di).GetComponents())
 	fmt.Println("v1 cross v3 =", vec13di.Cross(vec33di).GetComponents())
 	fmt.Println("v2 cross v3 =", vec23di.Cross(vec33di).GetComponents())
-	*/
 
+	*/
 }
